@@ -1,0 +1,29 @@
+
+<div class="jumbotron text-center" style="margin-top: 5%">
+  <h1 class="display-3">Dene Bi</h1>
+  <p class="lead">DeneBi ile size en uygun kursu bulun</p>
+  <div    *ngIf="!authService.loggedIn()">
+    <a class="btn btn-primary" [routerLinkActive]="['active']" [routerLink]="['/register']">Kayıt Ol <span class="glyphicon glyphicon-eur"></span></a> <a class="btn btn-dark" [routerLink]="['/login']">Giriş Yap</a>
+  </div>
+
+  <div   *ngIf="authService.loggedIn()">
+      <a class="btn btn-dark" (click)="onLogoutClick()" href="#">Çıkış</a>
+  </div>
+    
+</div>
+
+<div class="row">
+    
+  <div  class="col-md-4">
+    <h3 >Kurs Bulmanın en kolay yolu</h3>
+    <p class="lead">Bir dokunuşla etrafınızdaki size uygun en iyi kursları bulun</p>
+  </div>
+  <div class="col-md-4">
+    <h3 > Her zaman, her yerde </h3>
+    <p class="lead">Günlük işe gidiş geliş. Şehirde alışveriş. Sabah erken saatte uçuş. Akşam arkadaşlarla buluşma. Nereye giderseniz gidin, Dene Bi yanınızda</p>
+  </div>
+  <div    class="col-md-4"   >
+    <h3 >Giriş seviyesinden uzmanlık seviyelerine</h3>
+    <p class="lead"> İster deneyimli ister yeni başlamış olun size uygun kursa hemen ulaşın</p>
+  </div>
+</div>
