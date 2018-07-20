@@ -20,6 +20,9 @@ import { TrainerRegisterComponent } from './components/trainer-register/trainer-
 import { TrainerDashboardComponent } from './components/trainer-dashboard/trainer-dashboard.component';
 import { TrainerProfileComponent } from './components/trainer-profile/trainer-profile.component';
 import { TrainingRegisterComponent } from './components/training-register/training-register.component';
+import { FormCardComponent } from './components/form-card/form-card.component';
+import { RegisterPageComponent } from './components/register-page/register-page.component';
+import { RegisterCardComponent } from './components/register-card/register-card.component';
 
 const appRoutes: Routes =  [
   {path:'', component: HomeComponent},
@@ -31,6 +34,7 @@ const appRoutes: Routes =  [
   {path:'profile', component: ProfileComponent},
   {path:'trainerProfile', component: TrainerProfileComponent},
   {path:'trainingRegister', component: TrainingRegisterComponent},
+  {path:'register-page', component: RegisterPageComponent},
 ]
 
 @NgModule({
@@ -45,7 +49,10 @@ const appRoutes: Routes =  [
     TrainerRegisterComponent,
     TrainerDashboardComponent,
     TrainerProfileComponent,
-    TrainingRegisterComponent
+    TrainingRegisterComponent,
+    FormCardComponent,
+    RegisterPageComponent,
+    RegisterCardComponent
   ],
   imports: [
     BrowserModule,

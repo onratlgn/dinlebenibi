@@ -1,0 +1,42 @@
+.card {
+  border-radius: 10px;
+  margin-left: 60%;
+  margin-top: 5%;
+  width: 380px;
+  height: 320px;
+  align-items: center;
+}
+
+.card-header{
+  width: 100%;
+  font-size: 150%;
+  text-align: center;
+}
+
+.btn.btn-primary.btn-lg.sign{
+  background-color: rgba(0, 90, 15, 0.9);
+  width: 48%;
+}
+
+.btn.btn-primary.btn-lg.log{
+  background-color: rgba(38, 110, 49, 0.9);
+  width: 48%;
+}
+
+.btn-group{
+  width: 105%;
+  margin-top: 5%;
+}
+
+.btn-group.left{
+  margin-left: 15%;
+  margin-top: 1%;
+  block-size: 50px;
+  column-width: 50%;
+}
+
+.btn.btn-outline-primary{
+  color: white;
+  border-color: white;
+  border-radius: 10px;
+}

@@ -1,0 +1,11 @@
+.demo-layout-transparent {
+  background: url('https://images.pexels.com/photos/206274/pexels-photo-206274.jpeg') left / cover;
+
+}
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+  color: white;
+}
+
