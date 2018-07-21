@@ -7,9 +7,11 @@ import { tokenNotExpired } from 'angular2-jwt';
 @Injectable()
 export class AuthService {
   authToken: any;
+  trainerAuthToken: any
   user: any;
   trainer: any;
   isDev: true;
+  
   constructor(private http: Http) {
       this.isDev = true;  // Change to false before deployment
       }
@@ -62,8 +64,8 @@ export class AuthService {
   }
   getTrainerProfile() {
     let headers = new Headers();
-    this.loadToken();
-    headers.append('Authorization', this.authToken);
+    this.loadTrainerToken();
+    headers.append('Authorization', this.trainerAuthToken);
     headers.append('Content-Type', 'application/json');
     return this.http.get('trainers/profile', {headers: headers})
       .map(res => res.json());
@@ -77,9 +79,9 @@ export class AuthService {
   }
   
   storeTrainerData(token, trainer) {
-    localStorage.setItem('id_token', token);
+    localStorage.setItem('id_trainer_token', token);
     localStorage.setItem('trainer', JSON.stringify(trainer));
-    this.authToken = token;
+    this.trainerAuthToken = token;
     this.trainer = trainer;
   }
 
@@ -88,12 +90,17 @@ export class AuthService {
     this.authToken = token;
   }
 
+  loadTrainerToken() {
+    const token = localStorage.getItem('id_trainer_token');
+    this.trainerAuthToken = token;
+  }
   loggedIn() {
     return tokenNotExpired('id_token');
   }
 
   logout() {
     this.authToken = null;
+    this.trainerAuthToken= null;
     this.user = null;
     this.trainer = null;
     localStorage.clear();

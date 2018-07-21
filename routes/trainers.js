@@ -9,9 +9,14 @@ const Trainer = require('../models/trainer');
 router.post('/register', (req, res, next) => {
   let newTrainer = new Trainer ({
     name: req.body.name,
+    surname: req.body.surname,
     email: req.body.email,
     username: req.body.username,
-    password: req.body.password
+    password: req.body.password,
+    city: req.body.city,
+    district: req.body.district,
+    address: req.body.address,
+    phone: req.body.phone
   });
 
   Trainer.addTrainer(newTrainer, (err, trainer) => {
@@ -46,8 +51,10 @@ router.post('/authenticate', (req, res, next) => {
           trainer: {
             id: trainer._id,
             name: trainer.name,
+            surname: trainer.surname,
             username: trainer.username,
-            email: trainer.email
+            email: trainer.email,
+            city: trainer.city
           }
         })
       } else {

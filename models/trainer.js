@@ -7,6 +7,9 @@ const TrainerSchema = mongoose.Schema ({
   name: {
     type: String
   },
+  surname: {
+    type: String
+  },
   email: {
     type: String,
     required: true
@@ -18,6 +21,18 @@ const TrainerSchema = mongoose.Schema ({
   password: {
     type: String,
     required: true
+  },
+  phone: {
+    type: Number
+  },
+  city: {
+    type: String
+  },
+  district: {
+    type: String
+  },
+  address: {
+    type: String
   },
   trainings:[]
 });

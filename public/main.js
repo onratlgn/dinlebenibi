@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<div class=\"container\">\n  <flash-messages></flash-messages>\n  <router-outlet></router-outlet>\n</div>\n"
+module.exports = "<!--\n<app-navbar></app-navbar>-->\n<div class=\"container\">\n  <flash-messages></flash-messages>\n  <router-outlet></router-outlet>\n</div>\n"
 
 /***/ }),
 
@@ -112,12 +112,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_trainer_dashboard_trainer_dashboard_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/trainer-dashboard/trainer-dashboard.component */ "./src/app/components/trainer-dashboard/trainer-dashboard.component.ts");
 /* harmony import */ var _components_trainer_profile_trainer_profile_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/trainer-profile/trainer-profile.component */ "./src/app/components/trainer-profile/trainer-profile.component.ts");
 /* harmony import */ var _components_training_register_training_register_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/training-register/training-register.component */ "./src/app/components/training-register/training-register.component.ts");
+/* harmony import */ var _components_form_card_form_card_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/form-card/form-card.component */ "./src/app/components/form-card/form-card.component.ts");
+/* harmony import */ var _components_register_page_register_page_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/register-page/register-page.component */ "./src/app/components/register-page/register-page.component.ts");
+/* harmony import */ var _components_register_card_register_card_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/register-card/register-card.component */ "./src/app/components/register-card/register-card.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -148,6 +154,7 @@ var appRoutes = [
     { path: 'profile', component: _components_profile_profile_component__WEBPACK_IMPORTED_MODULE_11__["ProfileComponent"] },
     { path: 'trainerProfile', component: _components_trainer_profile_trainer_profile_component__WEBPACK_IMPORTED_MODULE_18__["TrainerProfileComponent"] },
     { path: 'trainingRegister', component: _components_training_register_training_register_component__WEBPACK_IMPORTED_MODULE_19__["TrainingRegisterComponent"] },
+    { path: 'register-page', component: _components_register_page_register_page_component__WEBPACK_IMPORTED_MODULE_21__["RegisterPageComponent"] },
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -165,7 +172,10 @@ var AppModule = (function () {
                 _components_trainer_register_trainer_register_component__WEBPACK_IMPORTED_MODULE_16__["TrainerRegisterComponent"],
                 _components_trainer_dashboard_trainer_dashboard_component__WEBPACK_IMPORTED_MODULE_17__["TrainerDashboardComponent"],
                 _components_trainer_profile_trainer_profile_component__WEBPACK_IMPORTED_MODULE_18__["TrainerProfileComponent"],
-                _components_training_register_training_register_component__WEBPACK_IMPORTED_MODULE_19__["TrainingRegisterComponent"]
+                _components_training_register_training_register_component__WEBPACK_IMPORTED_MODULE_19__["TrainingRegisterComponent"],
+                _components_form_card_form_card_component__WEBPACK_IMPORTED_MODULE_20__["FormCardComponent"],
+                _components_register_page_register_page_component__WEBPACK_IMPORTED_MODULE_21__["RegisterPageComponent"],
+                _components_register_card_register_card_component__WEBPACK_IMPORTED_MODULE_22__["RegisterCardComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -248,6 +258,115 @@ var DashboardComponent = (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/form-card/form-card.component.css":
+/*!**************************************************************!*\
+  !*** ./src/app/components/form-card/form-card.component.css ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".card {\r\n  border-radius: 10px;\r\n  margin-left: 60%;\r\n  margin-top: 5%;\r\n  width: 380px;\r\n  height: 320px;\r\n  align-items: center;\r\n}\r\n\r\n.card-header{\r\n  width: 100%;\r\n  font-size: 150%;\r\n  text-align: center;\r\n}\r\n\r\n.btn.btn-primary.btn-lg.sign{\r\n  background-color: rgba(0, 90, 15, 0.9);\r\n  width: 48%;\r\n}\r\n\r\n.btn.btn-primary.btn-lg.log{\r\n  background-color: rgba(38, 110, 49, 0.9);\r\n  width: 48%;\r\n}\r\n\r\n.btn-group{\r\n  width: 105%;\r\n  margin-top: 5%;\r\n}\r\n\r\n.btn-group.left{\r\n  margin-left: 15%;\r\n  margin-top: 1%;\r\n  block-size: 50px;\r\n  -webkit-column-width: 50%;\r\n          column-width: 50%;\r\n}\r\n\r\n.btn.btn-outline-primary{\r\n  color: white;\r\n  border-color: white;\r\n  border-radius: 10px;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/components/form-card/form-card.component.html":
+/*!***************************************************************!*\
+  !*** ./src/app/components/form-card/form-card.component.html ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n<div class=\"card\">\n    <div class=\"card-header\">Log In</div>\n  <div class=\"card-body\">\n    <form>\n      <fieldset>\n        <div class=\"form-group\">\n          <label for=\"username\">Username</label>\n          <input type=\"text\" class=\"form-control\" id=\"username\"  [(ngModel)]=\"username\" name = \"username\" placeholder=\"Enter username\">\n\n        </div>\n        <div class=\"form-group\">\n          <label for=\"exampleInputPassword1\">Password</label>\n          <input type=\"password\" class=\"form-control\" id=\"exampleInputPassword1\"  [(ngModel)]=\"password\" name = \"password\" placeholder=\"Password\">\n        </div>\n        <div class=\"btn-group\" data-toggle=\"buttons\">\n        <button type=\"button\" class=\"btn btn-primary btn-lg sign\" (click)=\"onSignSubmit()\">Sign Up</button>\n        <button type=\"button\" class=\"btn btn-primary btn-lg log\"  (click)=\"onLoginSubmit()\">Log In</button>\n        </div>\n      </fieldset>\n    </form>\n  </div>\n</div>\n<div class=\"btn-group left\" data-toggle=\"buttons\">\n<button type=\"button\" class=\"btn btn-outline-primary\">iOS</button>\n<button type=\"button\" class=\"btn btn-outline-primary\">Android</button>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/form-card/form-card.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/components/form-card/form-card.component.ts ***!
+  \*************************************************************/
+/*! exports provided: FormCardComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormCardComponent", function() { return FormCardComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var FormCardComponent = (function () {
+    function FormCardComponent(authService, router, flashMessage) {
+        this.authService = authService;
+        this.router = router;
+        this.flashMessage = flashMessage;
+    }
+    FormCardComponent.prototype.ngOnInit = function () {
+    };
+    FormCardComponent.prototype.onSignSubmit = function () {
+        this.router.navigate(['/register-page']);
+    };
+    FormCardComponent.prototype.onLoginSubmit = function () {
+        var _this = this;
+        var user = {
+            username: this.username,
+            password: this.password
+        };
+        var trainer = {
+            username: this.username,
+            password: this.password
+        };
+        this.authService.authenticateUser(user).subscribe(function (data) {
+            if (data.success) {
+                _this.authService.storeUserData(data.token, data.user);
+                _this.flashMessage.show('You are now logged in', { cssClass: 'alert-success', timeout: 5000 });
+                _this.router.navigate(['dashboard']);
+            }
+            else {
+                _this.authService.authenticateTrainer(trainer).subscribe(function (trainerData) {
+                    if (trainerData.success) {
+                        _this.authService.storeTrainerData(trainerData.token, trainerData.trainer);
+                        _this.flashMessage.show('You are now logged in', { cssClass: 'alert-success', timeout: 5000 });
+                        _this.router.navigate(['trainerDashboard']);
+                    }
+                    else {
+                        _this.flashMessage.show(trainerData.msg, { cssClass: 'alert-danger', timeout: 5000 });
+                        _this.router.navigate(['login']);
+                    }
+                });
+            }
+        });
+    };
+    FormCardComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-form-card',
+            template: __webpack_require__(/*! ./form-card.component.html */ "./src/app/components/form-card/form-card.component.html"),
+            styles: [__webpack_require__(/*! ./form-card.component.css */ "./src/app/components/form-card/form-card.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__["FlashMessagesService"]])
+    ], FormCardComponent);
+    return FormCardComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/home/home.component.css":
 /*!****************************************************!*\
   !*** ./src/app/components/home/home.component.css ***!
@@ -255,7 +374,7 @@ var DashboardComponent = (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".demo-layout-transparent {\r\n  background: url('https://images.pexels.com/photos/206274/pexels-photo-206274.jpeg') left / cover;\r\n\r\n}\r\n.demo-layout-transparent .mdl-layout__header,\r\n.demo-layout-transparent .mdl-layout__drawer-button {\r\n  /* This background is dark, so we set text to white. Use 87% black instead if\r\n     your background is light. */\r\n  color: white;\r\n}\r\n\r\n"
 
 /***/ }),
 
@@ -266,7 +385,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"jumbotron text-center\" style=\"margin-top: 5%\">\n  <h1 class=\"display-3\">Dene Bi</h1>\n  <p class=\"lead\">DeneBi ile size en uygun kursu bulun</p>\n  <div    *ngIf=\"!authService.loggedIn()\">\n    <a class=\"btn btn-primary\" [routerLinkActive]=\"['active']\" [routerLink]=\"['/register']\">Kayıt Ol <span class=\"glyphicon glyphicon-eur\"></span></a> <a class=\"btn btn-dark\" [routerLink]=\"['/login']\">Giriş Yap</a>\n  </div>\n\n  <div   *ngIf=\"authService.loggedIn()\">\n      <a class=\"btn btn-dark\" (click)=\"onLogoutClick()\" href=\"#\">Çıkış</a>\n  </div>\n    \n</div>\n\n<div class=\"row\">\n    \n  <div  class=\"col-md-4\">\n    <h3 >Kurs Bulmanın en kolay yolu</h3>\n    <p class=\"lead\">Bir dokunuşla etrafınızdaki size uygun en iyi kursları bulun</p>\n  </div>\n  <div class=\"col-md-4\">\n    <h3 > Her zaman, her yerde </h3>\n    <p class=\"lead\">Günlük işe gidiş geliş. Şehirde alışveriş. Sabah erken saatte uçuş. Akşam arkadaşlarla buluşma. Nereye giderseniz gidin, Dene Bi yanınızda</p>\n  </div>\n  <div    class=\"col-md-4\"   >\n    <h3 >Giriş seviyesinden uzmanlık seviyelerine</h3>\n    <p class=\"lead\"> İster deneyimli ister yeni başlamış olun size uygun kursa hemen ulaşın</p>\n  </div>\n</div>"
+module.exports = "\n<!--\n<div class=\"jumbotron text-center\" style=\"margin-top: 5%\">\n  <h1 class=\"display-3\">Dene Bi</h1>\n  <p class=\"lead\">DeneBi ile size en uygun kursu bulun</p>\n  <div    *ngIf=\"!authService.loggedIn()\">\n    <a class=\"btn btn-primary\" [routerLinkActive]=\"['active']\" [routerLink]=\"['/register']\">Kayıt Ol <span class=\"glyphicon glyphicon-eur\"></span></a> <a class=\"btn btn-dark\" [routerLink]=\"['/login']\">Giriş Yap</a>\n  </div>\n\n  <div   *ngIf=\"authService.loggedIn()\">\n      <a class=\"btn btn-dark\" (click)=\"onLogoutClick()\" href=\"#\">Çıkış</a>\n  </div>\n    \n</div>\n\n<div class=\"row\">\n    \n  <div  class=\"col-md-4\">\n    <h3 >Kurs Bulmanın en kolay yolu</h3>\n    <p class=\"lead\">Bir dokunuşla etrafınızdaki size uygun en iyi kursları bulun</p>\n  </div>\n  <div class=\"col-md-4\">\n    <h3 > Her zaman, her yerde </h3>\n    <p class=\"lead\">Günlük işe gidiş geliş. Şehirde alışveriş. Sabah erken saatte uçuş. Akşam arkadaşlarla buluşma. Nereye giderseniz gidin, Dene Bi yanınızda</p>\n  </div>\n  <div    class=\"col-md-4\"   >\n    <h3 >Giriş seviyesinden uzmanlık seviyelerine</h3>\n    <p class=\"lead\"> İster deneyimli ister yeni başlamış olun size uygun kursa hemen ulaşın</p>\n  </div>\n</div>\n\n-->\n\n\n<div class=\"demo-layout-transparent mdl-layout mdl-js-layout\">\n  <header class=\"mdl-layout__header mdl-layout__header--transparent\">\n    <div class=\"mdl-layout__header-row\">\n      <!-- Title -->\n      <span class=\"mdl-layout-title\">DeneBi</span>\n      <!-- Add spacer, to align navigation to the right -->\n      <div class=\"mdl-layout-spacer\"></div>\n      <!-- Navigation -->\n      <nav class=\"mdl-navigation\">\n        <a class=\"mdl-navigation__link\" *ngIf=\"authService.loggedIn()\"[routerLink]=\"['/register-page']\">Kurs Aç</a>\n        <a class=\"mdl-navigation__link\" *ngIf=\"!authService.loggedIn()\" [routerLink]=\"['/trainingRegister']\">Yeni Ders</a>\n        <a class=\"mdl-navigation__link\" href=\"\">Link</a>\n        <a class=\"mdl-navigation__link\" href=\"\">Link</a>\n      </nav>\n    </div>\n  </header>\n  <div class=\"mdl-layout__drawer\">\n    <span class=\"mdl-layout-title\">DeneBi</span>\n    <nav class=\"mdl-navigation\">\n      <a class=\"mdl-navigation__link\"  [routerLink]=\"['/register-page']\">Kurs Aç</a>\n      <a class=\"mdl-navigation__link\" href=\"\">Link</a>\n      <a class=\"mdl-navigation__link\" href=\"\">Link</a>\n      <a class=\"mdl-navigation__link\" href=\"\">Link</a>\n    </nav>\n  </div>\n  <main class=\"mdl-layout__content\">\n    <div class=\"main-page-login\">\n      <app-form-card ></app-form-card>\n    </div>\n  </main>\n</div>\n"
 
 /***/ }),
 
@@ -582,6 +701,183 @@ var ProfileComponent = (function () {
         __metadata("design:paramtypes", [_services_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], ProfileComponent);
     return ProfileComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/register-card/register-card.component.css":
+/*!**********************************************************************!*\
+  !*** ./src/app/components/register-card/register-card.component.css ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".card {\r\n    border-radius: 10px;\r\n    margin-left: 40%;\r\n    margin-top: 5%;\r\n    width: 380px;\r\n    height: 720px;\r\n    align-items: center;\r\n  }\r\n  \r\n  .card-header{\r\n    width: 100%;\r\n    font-size: 150%;\r\n    text-align: center;\r\n  }\r\n  \r\n  .btn.btn-primary.btn-lg.sign{\r\n    background-color: rgba(0, 90, 15, 0.9);\r\n    width: 48%;\r\n  }\r\n  \r\n  .btn-group{\r\n    width: 105%;\r\n    margin-top: 5%;\r\n    align-items: center;\r\n  }\r\n  \r\n  .btn-group.left{\r\n    margin-left: 15%;\r\n    margin-top: 1%;\r\n    block-size: 50px;\r\n    -webkit-column-width: 50%;\r\n            column-width: 50%;\r\n  }\r\n  \r\n  .btn.btn-outline-primary{\r\n    color: white;\r\n    border-color: white;\r\n    border-radius: 10px;\r\n  }\r\n  \r\n  .btn-group.duo{\r\n    width: 100%;\r\n    margin-top: -1.5%;\r\n  }"
+
+/***/ }),
+
+/***/ "./src/app/components/register-card/register-card.component.html":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/register-card/register-card.component.html ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n<div class=\"card\">\n  <div class=\"card-header\">Sign Up</div>\n<div class=\"card-body\" >\n  <form (submit)=\"onRegisterSubmit()\" >\n        <div class=\"form-group\">\n        <label for=\"Name\">Name Surname</label>  \n        <div class=\"btn-group duo\"></div>    \n            <input type=\"name\" [(ngModel)]=\"name\" class=\"form-control\" id=\"name\" name=\"name\" placeholder=\"Name\">\n            <input type=\"surname\" [(ngModel)]=\"surname\"class=\"form-control\" id=\"surname\" name=\"surname\" placeholder=\"Surname\">        \n        </div>\n      <div class=\"form-group\">\n        <label for=\"Username\">Username</label>\n        <input type=\"username\" [(ngModel)]=\"username\"class=\"form-control\" id=\"username\" name=\"username\" placeholder=\"Username\">\n      </div>\n      <div class=\"form-group\">\n        <label for=\"exampleInputEmail1\">Email address</label>\n        <input type=\"email\" [(ngModel)]=\"email\"class=\"form-control\" id=\"exampleInputEmail1\" name=\"email\" aria-describedby=\"emailHelp\" placeholder=\"Enter email\">\n        <small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"exampleInputPassword1\">Password</label>\n        <input type=\"password\" [(ngModel)]=\"password\"class=\"form-control\" id=\"exampleInputPassword1\" name=\"password\" placeholder=\"Password\">\n      </div>\n      <!---->\n      <div class=\"form-group\">\n        <label for=\"Place\">Place</label>\n        <input type=\"place\" class=\"form-control\" id=\"place\" name=\"place\" placeholder=\"Place\">\n      </div>\n      <div class=\"form-group\">\n          <label for=\"Phone\">Phone</label>\n          <input type=\"number\" [(ngModel)]=\"phone\" class=\"form-control\" id=\"phone\" name=\"phone\"placeholder=\"Phone\">\n        </div>\n      <div class=\"form-group\">\n          <label for=\"Address\">Address</label>\n          <textarea class=\"form-control\" [(ngModel)]=\"address\" id=\"Address\" name=\"address\" rows=\"3\" placeholder=\"Address\"></textarea>\n        <div class=\"btn-group duo\">\n            <input type=\"district\" [(ngModel)]=\"district\" class=\"form-control\" id=\"district\" name=\"district\" placeholder=\"District\">\n            <input type=\"city\" [(ngModel)]=\"city\" class=\"form-control\" id=\"city\" name=\"city\" placeholder=\"City\">\n        </div>\n      </div>\n\n      \n      <input type=\"submit\"class=\"btn btn-primary btn-lg sign\" value=\"Submit\">\n  </form>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/register-card/register-card.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/components/register-card/register-card.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: RegisterCardComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterCardComponent", function() { return RegisterCardComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _services_validate_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/validate.service */ "./src/app/services/validate.service.ts");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/esm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var RegisterCardComponent = (function () {
+    function RegisterCardComponent(validateService, authService, router, flashMessage) {
+        this.validateService = validateService;
+        this.authService = authService;
+        this.router = router;
+        this.flashMessage = flashMessage;
+    }
+    RegisterCardComponent.prototype.ngOnInit = function () {
+    };
+    RegisterCardComponent.prototype.onRegisterSubmit = function () {
+        var _this = this;
+        var trainer = {
+            name: this.name,
+            surname: this.surname,
+            email: this.email,
+            username: this.username,
+            password: this.password,
+            phone: this.phone,
+            city: this.city,
+            district: this.district,
+            address: this.address
+        };
+        // Required Fields
+        if (!this.validateService.validateRegister(trainer)) {
+            this.flashMessage.show('Please fill in all fields', { cssClass: 'alert-danger', timeout: 3000 });
+            return false;
+        }
+        // Validate Email
+        if (!this.validateService.validateEmail(trainer.email)) {
+            this.flashMessage.show('Please use a valid email', { cssClass: 'alert-danger', timeout: 3000 });
+            return false;
+        }
+        // Register user
+        this.authService.registerTrainer(trainer).subscribe(function (data) {
+            if (data.success) {
+                _this.flashMessage.show('You are now registered and can now login', { cssClass: 'alert-success', timeout: 3000 });
+                _this.router.navigate(['/']);
+            }
+            else {
+                _this.flashMessage.show('Something went wrong', { cssClass: 'alert-danger', timeout: 3000 });
+                _this.router.navigate(['/register-page']);
+            }
+        });
+    };
+    RegisterCardComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-register-card',
+            template: __webpack_require__(/*! ./register-card.component.html */ "./src/app/components/register-card/register-card.component.html"),
+            styles: [__webpack_require__(/*! ./register-card.component.css */ "./src/app/components/register-card/register-card.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_validate_service__WEBPACK_IMPORTED_MODULE_1__["ValidateService"],
+            _services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"],
+            angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__["FlashMessagesService"]])
+    ], RegisterCardComponent);
+    return RegisterCardComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/register-page/register-page.component.css":
+/*!**********************************************************************!*\
+  !*** ./src/app/components/register-page/register-page.component.css ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".demo-layout-transparent {\r\n    background: url('https://images.pexels.com/photos/206274/pexels-photo-206274.jpeg') left / cover;\r\n  \r\n  }\r\n  .demo-layout-transparent .mdl-layout__header,\r\n  .demo-layout-transparent .mdl-layout__drawer-button {\r\n    /* This background is dark, so we set text to white. Use 87% black instead if\r\n       your background is light. */\r\n    color: white;\r\n  }\r\n  \r\n  "
+
+/***/ }),
+
+/***/ "./src/app/components/register-page/register-page.component.html":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/register-page/register-page.component.html ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"demo-layout-transparent mdl-layout mdl-js-layout\">\n  <header class=\"mdl-layout__header mdl-layout__header--transparent\">\n    <div class=\"mdl-layout__header-row\">\n      <!-- Title -->\n      <span class=\"mdl-layout-title\">Title</span>\n      <!-- Add spacer, to align navigation to the right -->\n      <div class=\"mdl-layout-spacer\"></div>\n      <!-- Navigation -->\n      <nav class=\"mdl-navigation\">\n        <a class=\"mdl-navigation__link\" href=\"\">Link</a>\n        <a class=\"mdl-navigation__link\"  [routerLink]=\"['/trainingRegister']\">Yeni Ders</a>\n        <a class=\"mdl-navigation__link\" href=\"\">Link</a>\n        <a class=\"mdl-navigation__link\" href=\"\">Link</a>\n      </nav>\n    </div>\n  </header>\n  <div class=\"mdl-layout__drawer\">\n    <span class=\"mdl-layout-title\">Title</span>\n    <nav class=\"mdl-navigation\">\n      <a class=\"mdl-navigation__link\" href=\"\">Link</a>\n      <a class=\"mdl-navigation__link\" href=\"\">Link</a>\n      <a class=\"mdl-navigation__link\" href=\"\">Link</a>\n      <a class=\"mdl-navigation__link\" href=\"\">Link</a>\n    </nav>\n  </div>\n  <main class=\"mdl-layout__content\">\n    <div class=\"main-page-login\">\n      <app-register-card></app-register-card>\n    </div>\n  </main>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/register-page/register-page.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/components/register-page/register-page.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: RegisterPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterPageComponent", function() { return RegisterPageComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var RegisterPageComponent = (function () {
+    function RegisterPageComponent() {
+    }
+    RegisterPageComponent.prototype.ngOnInit = function () {
+    };
+    RegisterPageComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-register-page',
+            template: __webpack_require__(/*! ./register-page.component.html */ "./src/app/components/register-page/register-page.component.html"),
+            styles: [__webpack_require__(/*! ./register-page.component.css */ "./src/app/components/register-page/register-page.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], RegisterPageComponent);
+    return RegisterPageComponent;
 }());
 
 
@@ -1172,8 +1468,8 @@ var AuthService = (function () {
     };
     AuthService.prototype.getTrainerProfile = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
-        this.loadToken();
-        headers.append('Authorization', this.authToken);
+        this.loadTrainerToken();
+        headers.append('Authorization', this.trainerAuthToken);
         headers.append('Content-Type', 'application/json');
         return this.http.get('trainers/profile', { headers: headers })
             .map(function (res) { return res.json(); });
@@ -1185,20 +1481,25 @@ var AuthService = (function () {
         this.user = user;
     };
     AuthService.prototype.storeTrainerData = function (token, trainer) {
-        localStorage.setItem('id_token', token);
+        localStorage.setItem('id_trainer_token', token);
         localStorage.setItem('trainer', JSON.stringify(trainer));
-        this.authToken = token;
+        this.trainerAuthToken = token;
         this.trainer = trainer;
     };
     AuthService.prototype.loadToken = function () {
         var token = localStorage.getItem('id_token');
         this.authToken = token;
     };
+    AuthService.prototype.loadTrainerToken = function () {
+        var token = localStorage.getItem('id_trainer_token');
+        this.trainerAuthToken = token;
+    };
     AuthService.prototype.loggedIn = function () {
         return Object(angular2_jwt__WEBPACK_IMPORTED_MODULE_3__["tokenNotExpired"])('id_token');
     };
     AuthService.prototype.logout = function () {
         this.authToken = null;
+        this.trainerAuthToken = null;
         this.user = null;
         this.trainer = null;
         localStorage.clear();
@@ -1315,7 +1616,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\kesgin\Desktop\DenemeBi\angular-src\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\onrat\Documents\Private Projects\bidene\angular-src\src\main.ts */"./src/main.ts");
 
 
 /***/ })
